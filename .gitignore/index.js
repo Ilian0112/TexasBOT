@@ -437,4 +437,4 @@ bot.on("message", async function(message) {
     }
 });
 
-bot.login('NDM4NDA4NTAxNDMwMDU5MDQw.DcELhQ.bcw4okDV8EXnvRzRs8j2S-EAa-4');
+bot.login('NDM4NDI4NTEwMTMxMDYwNzQ2.DcEd5g.74_ehgG61aAi5xVJ4gzHE9MlnxA');
