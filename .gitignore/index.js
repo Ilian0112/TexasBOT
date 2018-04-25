@@ -389,6 +389,23 @@ bot.on("message", async function(message) {
    member.guild.channels.find("name", "announcements").sendEmbed(embed);
    break;      
 
+ case "translatehelp":
+            var embed = new Discord.RichEmbed()
+                 .addField(".tradenfr", "Traduction Anglais ==> Français !") 
+                 .addField(".tradfren", "Traduction Français ==> Anglais !")
+                 .addField(".tradesfr", "Traduction Espagnol ==> Français !")
+                 .addField(".tradfres", "Taduction Français ==> Espagnol !")
+                 .addField(".tradesen", "Traduction Espagnol ==> Anglais !")
+                 .addField(".tradenes", "Taduction Anglais ==> Espagnol !")            
+                .setColor("#00ffcc")
+                .setFooter("This is so very fun !")
+                .setAuthor("Translate Help Pannel")
+                .setDescription("Have fun translating little child !")
+                .setTimestamp()
+                message.delete()
+                message.channel.sendEmbed(embed)
+            break;      
+      
        case "tradenfr":
         let tradenfr = message.content.split(' ');
         tradenfr.shift();
@@ -415,23 +432,15 @@ bot.on("message", async function(message) {
          tradfres.shift();
          console.log("Traduction Français ==> Espagnol");
          message.reply('https://translate.google.fr/#fr/es/' + tradfres.join('%20'));
-         break;   
+         break;      
       
-         case "translatehelp":
-         var embed = new Discord.RichEmbed()
-              .addField(".tradenfr", "Translate English ==> French !") 
-              .addField(".tradfren", "Translate French ==> English !")
-              .addField(".tradesfr", "Translate Spanish ==> French !")
-              .addField(".tradfres", "Taduction French ==> Spanish !")
-             .setColor("#00ffcc")
-             .setFooter("Have fun translating little child !")
-             .setAuthor("Translate Help Pannel")
-             .setDescription("This is so very fun !")
-             .setTimestamp()
-             message.delete()
-             message.channel.sendEmbed(embed)
-         break; 
-
+        case "tradenes":
+         let tradenes = message.content.split(' ');
+         tradenes.shift();
+         console.log("Traduction Anglais ==> Espagnol");
+         message.reply('https://translate.google.fr/#en/es/' + tradesen.join('%20'))
+         break;     
+      
         default:
             message.channel.sendMessage("Invalid command ^^ Done .help to see all available commands !")
             message.delete();
