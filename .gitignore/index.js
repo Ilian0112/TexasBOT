@@ -284,6 +284,7 @@ bot.on("message", async function(message) {
                  .addField(".play", "Play a music! To use it, make .play (link) !")
                  .addField(".skip", "Skipping a music To use it, make .skip !")
                  .addField(".stop", "Stop the music To use it, make .stop !")
+                 .addField(".members", " For view how many membrtd are in the server.")
                  .addField(".translatehelp", "With this you can see the translate pannel :) Just for help you with the translate command !")
                  .addField(".google", "Order not too useful but you can do google search. To use it, make .google (search) !")
                  .addField(".shelp", "❌View the command of the staff. But only those who have the kick perm can access it. ❌")
