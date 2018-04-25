@@ -1,4 +1,4 @@
-﻿const Discord = require("discord.js");
+const Discord = require("discord.js");
 const YTDL = require("ytdl-core");
 const PREFIX = ".";
 const queue = new Map();
@@ -167,7 +167,7 @@ bot.on("message", async function(message) {
     
     var roleMute = member.guild.roles.find("name", "Mute")
     
-    var modlog = member.guild.channels.find("name", "bot_commands")
+    var modlog = member.guild.channels.find("name", "log_channel")
     
     var user = message.mentions.users.first();
 
@@ -253,7 +253,7 @@ bot.on("message", async function(message) {
         .setColor("#FFFF00")
         .setAuthor(message.author.username, message.author.avatarURL)
         .setTimestamp()
-        member.guild.channels.find("name", "bot_commands").sendEmbed(embed);
+        member.guild.channels.find("name", "log_channel").sendEmbed(embed);
         break;
         case "shelp":
             if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.sendMessage("You can't execute this command. ❌");
@@ -284,7 +284,6 @@ bot.on("message", async function(message) {
                  .addField(".play", "Play a music! To use it, make .play (link) !")
                  .addField(".skip", "Skipping a music To use it, make .skip !")
                  .addField(".stop", "Stop the music To use it, make .stop !")
-                 .addField(".members", " For view how many membrtd are in the server.")
                  .addField(".translatehelp", "With this you can see the translate pannel :) Just for help you with the translate command !")
                  .addField(".google", "Order not too useful but you can do google search. To use it, make .google (search) !")
                  .addField(".shelp", "❌View the command of the staff. But only those who have the kick perm can access it. ❌")
@@ -314,7 +313,7 @@ bot.on("message", async function(message) {
             .setAuthor(message.author.username, message.author.avatarURL)
             .setTimestamp()
             member.guild.channels.find("name", "bot_commands").sendEmbed(embed);
-            bot.channels.get('438420057911984129').sendMessage(":white_check_mark: The user " + user.username + " have been well kicked for: " + reason);
+            bot.channels.get('438671591648526336').sendMessage(":white_check_mark: The user " + user.username + " have been well kicked for: " + reason);
        
             message.delete();
             break;
@@ -336,9 +335,9 @@ bot.on("message", async function(message) {
             .setColor("#ff9933")
             .setAuthor(message.author.username, message.author.avatarURL)
             .setTimestamp()
-            member.guild.channels.find("name", "bot_commands").sendEmbed(embed);
+            member.guild.channels.find("name", "log_channel").sendEmbed(embed);
             
-            bot.channels.get('438420057911984129').sendMessage(":white_check_mark: The user " + user.username + " have been well banned for: " + reason);
+            bot.channels.get('438671591648526336').sendMessage(":white_check_mark: The user " + user.username + " have been well banned for: " + reason);
             
             message.delete();
             break;
@@ -357,7 +356,7 @@ bot.on("message", async function(message) {
             .setColor("#009999")
             .setFooter("Phew! It did a good job in the server ! ^^")
             message.delete()
-            member.guild.channels.find("name", "bot_commands").sendEmbed(embed);
+            member.guild.channels.find("name", "log_channel").sendEmbed(embed);
             break;
 
        case "ping":
@@ -389,23 +388,6 @@ bot.on("message", async function(message) {
    member.guild.channels.find("name", "announcements").sendEmbed(embed);
    break;      
 
- case "translatehelp":
-            var embed = new Discord.RichEmbed()
-                 .addField(".tradenfr", "Traduction Anglais ==> Français !") 
-                 .addField(".tradfren", "Traduction Français ==> Anglais !")
-                 .addField(".tradesfr", "Traduction Espagnol ==> Français !")
-                 .addField(".tradfres", "Taduction Français ==> Espagnol !")
-                 .addField(".tradesen", "Traduction Espagnol ==> Anglais !")
-                 .addField(".tradenes", "Taduction Anglais ==> Espagnol !")            
-                .setColor("#00ffcc")
-                .setFooter("This is so very fun !")
-                .setAuthor("Translate Help Pannel")
-                .setDescription("Have fun translating little child !")
-                .setTimestamp()
-                message.delete()
-                message.channel.sendEmbed(embed)
-            break;      
-      
        case "tradenfr":
         let tradenfr = message.content.split(' ');
         tradenfr.shift();
@@ -432,19 +414,27 @@ bot.on("message", async function(message) {
          tradfres.shift();
          console.log("Traduction Français ==> Espagnol");
          message.reply('https://translate.google.fr/#fr/es/' + tradfres.join('%20'));
-         break;      
+         break;   
       
-        case "tradenes":
-         let tradenes = message.content.split(' ');
-         tradenes.shift();
-         console.log("Traduction Anglais ==> Espagnol");
-         message.reply('https://translate.google.fr/#en/es/' + tradesen.join('%20'))
-         break;     
-      
+         case "translatehelp":
+         var embed = new Discord.RichEmbed()
+              .addField(".tradenfr", "Translate English ==> French !") 
+              .addField(".tradfren", "Translate French ==> English !")
+              .addField(".tradesfr", "Translate Spanish ==> French !")
+              .addField(".tradfres", "Taduction French ==> Spanish !")
+             .setColor("#00ffcc")
+             .setFooter("Have fun translating little child !")
+             .setAuthor("Translate Help Pannel")
+             .setDescription("This is so very fun !")
+             .setTimestamp()
+             message.delete()
+             message.channel.sendEmbed(embed)
+         break; 
+
         default:
             message.channel.sendMessage("Invalid command ^^ Done .help to see all available commands !")
             message.delete();
     }
 });
 
-bot.login('NDM4NDI4NTEwMTMxMDYwNzQ2.DcEd5g.74_ehgG61aAi5xVJ4gzHE9MlnxA');
+bot.login('NDM4NDI4NTEwMTMxMDYwNzQ2.DcISKQ.eSr5yBwsK0bQfJV2B4YKVc01w_s');
