@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const YTDL = require("ytdl-core");
-const PREFIX = ".";
+const PREFIX = ":";
 const queue = new Map();
 const EVERYONE = "@";
 
@@ -24,7 +24,7 @@ function play(connection, message) {
 }
 
 bot.on("ready", function () {
-    bot.user.setGame("TexasBOT V1 - .help |")
+    bot.user.setGame("TexasBOT V1 - :help |")
     bot.user.setUsername("TexasBOT - V1")
     console.log("TexasBOT V1 - Connecté");
 });
@@ -263,12 +263,12 @@ bot.on("message", async function(message) {
             }).then(messages => message.channel.bulkDelete(messagecount));
                         message.delete()
         var embed = new Discord.RichEmbed()
-            .addField(".ban", "This command allows you to ban a user ! To use it, make .ban @(user) + (reason)")
-            .addField(".kick", "This command allows to kick a user!  To use it, make .kick @(user) + (reason)")
-             .addField(".purge", "This command allows you to delete messages much faster ! To use it, make .purge (nomberofmessages)")
-             .addField(".mute", "This command is used to transfer a user for a certain time. To use it, make .mute @(user) + (reason)")
-             .addField(".web", "For write a message in #announcements with me and with a beautiful style !")
-             .addField(".unmute", "This command allows unmute a user. To use it, make .unmute @(user)")
+            .addField(":ban", "This command allows you to ban a user ! To use it, make .ban @(user) + (reason)")
+            .addField(":kick", "This command allows to kick a user!  To use it, make .kick @(user) + (reason)")
+             .addField(":purge", "This command allows you to delete messages much faster ! To use it, make .purge (nomberofmessages)")
+             .addField(":mute", "This command is used to transfer a user for a certain time. To use it, make .mute @(user) + (reason)")
+             .addField(":web", "For write a message in #announcements with me and with a beautiful style !")
+             .addField(":unmute", "This command allows unmute a user. To use it, make .unmute @(user)")
             .setColor("#cc0000")
             .setFooter("Staff help.")
             .setAuthor("Staff Help Panel")
@@ -280,13 +280,13 @@ bot.on("message", async function(message) {
         
         case "help":
             var embed = new Discord.RichEmbed()
-                 .addField(".ping", "Thanks to this command, you will be able to know your ping !") 
-                 .addField(".play", "Play a music! To use it, make .play (link) !")
-                 .addField(".skip", "Skipping a music To use it, make .skip !")
-                 .addField(".stop", "Stop the music To use it, make .stop !")
-                 .addField(".translatehelp", "With this you can see the translate pannel :) Just for help you with the translate command !")
-                 .addField(".google", "Order not too useful but you can do google search. To use it, make .google (search) !")
-                 .addField(".shelp", "❌View the command of the staff. But only those who have the kick perm can access it. ❌")
+                 .addField(":ping", "Thanks to this command, you will be able to know my ping !") 
+                 .addField(":play", "Play a music! To use it, make .play (link) !")
+                 .addField(":skip", "Skipping a music To use it, make .skip !")
+                 .addField(":stop", "Stop the music To use it, make .stop !")
+                 .addField(":translatehelp", "With this you can see the translate pannel :) Just for help you with the translate command !")
+                 .addField(":google", "Order not too useful but you can do google search. To use it, make .google (search) !")
+                 .addField(":shelp", "❌View the command of the staff. But only those who have the kick perm can access it. ❌")
                 .setColor("#0000ff")
                 .setFooter("Command idea? Suggest in DM!")
                 .setAuthor("Help Panel")
@@ -418,10 +418,10 @@ bot.on("message", async function(message) {
       
          case "translatehelp":
          var embed = new Discord.RichEmbed()
-              .addField(".tradenfr", "Translate English ==> French !") 
-              .addField(".tradfren", "Translate French ==> English !")
-              .addField(".tradesfr", "Translate Spanish ==> French !")
-              .addField(".tradfres", "Taduction French ==> Spanish !")
+              .addField(":tradenfr", "Translate English ==> French !") 
+              .addField(":tradfren", "Translate French ==> English !")
+              .addField(":tradesfr", "Translate Spanish ==> French !")
+              .addField(":tradfres", "Taduction French ==> Spanish !")
              .setColor("#00ffcc")
              .setFooter("Have fun translating little child !")
              .setAuthor("Translate Help Pannel")
