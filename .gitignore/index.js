@@ -216,7 +216,7 @@ bot.on("message", async function(message) {
      
         break;    
         case "members":
-            message.reply("We are " + bot.users.size + " members on this server !");
+            message.reply("We are``" + message.guild.memberCount + " members`` on this server !");
         break
         case "unmute":
         if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.sendMessage("You can't execute this command. ❌");
