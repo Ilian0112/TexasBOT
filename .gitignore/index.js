@@ -134,7 +134,7 @@ bot.on('message', function(message) {
 
 bot.on("guildMemberAdd", function(member) {
     member.guild.channels.find("name","welcome_channel").sendMessage(member.toString() + " Welcome to the discord of ``" + message.guild.name + "`` ! :white_check_mark:");
-    member.addRole(member.guild.roles.find("name", "Guest"));
+    member.addRole(member.guild.roles.find("name", "Testeur BOT"));
 });
 
 bot.on("guildMemberRemove", function(member) {
@@ -163,7 +163,7 @@ bot.on("message", async function(message) {
     
     var member = message.member;
 
-    var roleJoueur= member.guild.roles.find("name", "Guest")
+    var roleJoueur= member.guild.roles.find("name", "Testeur BOT")
     
     var roleMute = member.guild.roles.find("name", "Mute")
     
