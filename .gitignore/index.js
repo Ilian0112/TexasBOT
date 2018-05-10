@@ -133,7 +133,7 @@ bot.on('message', function(message) {
     });
 
 bot.on("guildMemberAdd", function(member) {
-    member.guild.channels.find("name","welcome_channel").sendMessage(member.toString() + " Welcome to the discord of **𝓶𝓪𝓼𝓽𝓮𝓻𝓵𝓸𝓹𝓪𝓷𝓰_𝓛𝓘𝓑𝓔𝓡𝓣𝓨** ! :white_check_mark:");
+    member.guild.channels.find("name","welcome_channel").sendMessage(member.toString() + " Welcome to the discord of ``" + message.guild.name + "`` ! :white_check_mark:");
     member.addRole(member.guild.roles.find("name", "Guest"));
 });
 
@@ -216,7 +216,7 @@ bot.on("message", async function(message) {
      
         break;    
         case "members":
-            message.reply("We are``" + message.guild.memberCount + " members`` on this server !");
+            message.reply("We are``" + message.guild.memberCount + " members`` on ``" + message.guild.name + "`` !");
         break
         case "unmute":
         if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.sendMessage("You can't execute this command. ❌");
