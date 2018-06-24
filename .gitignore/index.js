@@ -24,9 +24,9 @@ function play(connection, message) {
 }
 
 bot.on("ready", function () {
-    bot.user.setGame("TexasBOT V1 - :help |")
-    bot.user.setUsername("TexasBOT - V1")
-    console.log("TexasBOT V1 - Connecté");
+    bot.user.setActivity("TexasBOT - :help |")
+    bot.user.setUsername("TexasBOT")
+    console.log("TexasBOT - Connecté");
 });
 
 bot.on('message', function(message) {
@@ -430,10 +430,6 @@ bot.on("message", async function(message) {
              message.delete()
              message.channel.sendEmbed(embed)
          break; 
-
-        default:
-            message.channel.sendMessage("Invalid command ^^ Done .help to see all available commands !")
-            message.delete();
     }
 });
 
